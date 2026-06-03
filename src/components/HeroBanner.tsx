@@ -16,7 +16,6 @@ interface HeroBannerProps {
 export const HeroBanner = ({ reproduciendo, setReproduciendo }: HeroBannerProps) => {
   return (
     <section className="relative overflow-hidden rounded-2xl bg-surface-2 min-h-[220px]">
-      {/* Imagen de ondas de fondo */}
       <img
         src="/covers/hero-wave.png"
         alt=""
@@ -34,7 +33,6 @@ export const HeroBanner = ({ reproduciendo, setReproduciendo }: HeroBannerProps)
         </h1>
         
         <div className="flex gap-3">
-          {/* Botón de Play/Pausa principal */}
           <button
             onClick={() => setReproduciendo(!reproduciendo)}
             className="flex items-center gap-2 rounded-full bg-primary px-6 py-3 text-sm font-bold text-background transition-transform hover:scale-105"
@@ -52,7 +50,6 @@ export const HeroBanner = ({ reproduciendo, setReproduciendo }: HeroBannerProps)
             )}
           </button>
 
-          {/* Botón Aleatorio estético */}
           <button
             type="button"
             className="flex items-center gap-2 rounded-full bg-surface-3/80 px-6 py-3 text-sm font-bold text-foreground backdrop-blur transition-transform hover:scale-105"

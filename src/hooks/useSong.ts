@@ -1,14 +1,8 @@
 // src/hooks/useSong.ts
 import { useEffect, useState } from "react";
 import { supabase } from "../lib/supabaseClient";
-import type { Cancion } from "../types/Cancion";
+import type { Cancion, Playlist } from "../types/Cancion";
 
-export interface Playlist {
-  id: number;
-  nombre: string;
-  descripcion: string;
-  portada?: string;
-}
 
 export type PlaylistInput = Omit<Playlist, "id">;
 export type CancionInput = Omit<Cancion, "id">;
@@ -23,6 +17,7 @@ export const useSong = () => {
   const [cancionActual, setCancionActual] = useState<Cancion | null>(null);
   const [panelPlaylistAbierto, setPanelPlaylistAbierto] = useState<boolean>(false);
   const [playlistEditando, setPlaylistEditando] = useState<Playlist | null>(null);
+
   const [favoritas, setFavoritas] = useState<Cancion[]>([]);
 
 

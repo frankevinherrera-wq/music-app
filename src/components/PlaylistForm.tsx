@@ -1,11 +1,10 @@
 import { useState, useEffect } from "react";
-
+import type { Playlist } from "../types/Cancion";
 interface PlaylistFormProps {
-  playlist: any;
+  playlist: Playlist | null; // 👈 Cambiado: Ahora es estrictamente una Playlist o null
   onGuardar: (datos: { nombre: string; descripcion: string; portada: string }) => void;
   onCancelar: () => void;
 }
-
 export const PlaylistForm = ({ playlist, onGuardar, onCancelar }: PlaylistFormProps) => {
   const [nombre, setNombre] = useState("");
   const [descripcion, setDescripcion] = useState("");

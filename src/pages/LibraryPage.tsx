@@ -4,9 +4,8 @@ import { Player } from "../components/Player";
 import { Music, Pencil, Trash2, Plus, Disc } from "lucide-react";
 import { useMusic } from "../context/MusicContext";
 import { SongForm } from "../components/SongForm";
-import type { Cancion } from "../types/Cancion";
+import type { Cancion, Playlist } from "../types/Cancion";
 import { PlaylistForm } from "../components/PlaylistForm";
-
 export const LibraryPage = () => {
   const { 
     canciones = [],
@@ -38,10 +37,10 @@ export const LibraryPage = () => {
     setPanelPlaylistAbierto(true);
   };
 
-  const handleEditarPlaylistClick = (playlist: any) => {
-    setPlaylistEditando(playlist);
-    setPanelPlaylistAbierto(true);
-  };
+  const handleEditarPlaylistClick = (playlist: Playlist) => { // 👈 Tipado correcto
+  setPlaylistEditando(playlist);
+  setPanelPlaylistAbierto(true);
+};
 
   const handleGuardarPlaylistGlobal = async (datos: { nombre: string; descripcion: string; portada: string }) => {
     let exito: boolean;

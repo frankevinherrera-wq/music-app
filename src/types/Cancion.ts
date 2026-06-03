@@ -8,3 +8,9 @@ export interface Cancion {
   audio_url?: string; 
 }
 
+export interface Playlist {
+  id: number;          
+  nombre: string;
+  descripcion: string;
+  portada: string | null;
+}
